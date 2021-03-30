@@ -34,7 +34,7 @@ public class DoTodayCommand extends Command {
     private final OperationFlag operationFlag;
 
     /**
-     * Constructs a {@code DoTodayCommand}.
+     * Constructs a {@code DoTodayCommand} with the given {@code Index} and {@code OperationFlag}.
      */
     public DoTodayCommand(Index targetIndex, OperationFlag operationFlag) {
         this.targetIndex = targetIndex;
