@@ -33,7 +33,7 @@ public class MainWindow extends UiPart<Stage> {
     // Independent Ui parts residing in this Ui container
     private TaskListPanel taskListPanel;
     private TaskListPanel finishedTaskListPanel;
-    private TaskListPanel dailyTaskListPanel;
+    private TaskListPanel dailyTodoTaskListPanel;
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
@@ -50,7 +50,7 @@ public class MainWindow extends UiPart<Stage> {
     private StackPane finishedTaskListPanelPlaceholder;
 
     @FXML
-    private StackPane dailyTaskListPanelPlaceholder;
+    private StackPane dailyTodoTaskListPanelPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -124,8 +124,8 @@ public class MainWindow extends UiPart<Stage> {
         // finishedTaskListPanel = new TaskListPanel(logic.getFinishedTaskList());
         // finishedTaskListPanelPlaceholder.getChildren().add(finishedTaskListPanel.getRoot());
 
-        dailyTaskListPanel = new TaskListPanel(logic.getDailyTaskList());
-        dailyTaskListPanelPlaceholder.getChildren().add(dailyTaskListPanel.getRoot());
+        dailyTodoTaskListPanel = new TaskListPanel(logic.getDailyTaskList());
+        dailyTodoTaskListPanelPlaceholder.getChildren().add(dailyTodoTaskListPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());

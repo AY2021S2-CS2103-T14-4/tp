@@ -10,7 +10,7 @@ import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.DeleteCommand;
-import seedu.address.logic.commands.DoTodayCommand;
+import seedu.address.logic.commands.DailyTodoCommand;
 import seedu.address.logic.commands.DoneCommand;
 import seedu.address.logic.commands.DueInCommand;
 import seedu.address.logic.commands.EditCommand;
@@ -63,7 +63,7 @@ public class TaskTrackerParser {
         case DeleteCommand.COMMAND_WORD:
             return new DeleteCommandParser().parse(arguments);
 
-        case DoTodayCommand.COMMAND_WORD:
+        case DailyTodoCommand.COMMAND_WORD:
             return new DoTodayCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:

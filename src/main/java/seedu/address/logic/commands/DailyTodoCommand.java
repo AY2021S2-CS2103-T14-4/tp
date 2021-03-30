@@ -15,7 +15,7 @@ import seedu.address.model.person.Task;
 /**
  * Adds or removes a task from the daily to-do list based on the operation type specified.
  */
-public class DoTodayCommand extends Command {
+public class DailyTodoCommand extends Command {
 
     public static final String COMMAND_WORD = "doToday";
 
@@ -34,9 +34,9 @@ public class DoTodayCommand extends Command {
     private final OperationFlag operationFlag;
 
     /**
-     * Constructs a {@code DoTodayCommand} with the given {@code Index} and {@code OperationFlag}.
+     * Constructs a {@code DailyTodoCommand} with the given {@code Index} and {@code OperationFlag}.
      */
-    public DoTodayCommand(Index targetIndex, OperationFlag operationFlag) {
+    public DailyTodoCommand(Index targetIndex, OperationFlag operationFlag) {
         this.targetIndex = targetIndex;
         this.operationFlag = operationFlag;
     }
@@ -72,8 +72,8 @@ public class DoTodayCommand extends Command {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof DoTodayCommand // instanceof handles nulls
-                && targetIndex.equals(((DoTodayCommand) other).targetIndex))
-                && operationFlag.equals(((DoTodayCommand) other).operationFlag); // state check
+                || (other instanceof DailyTodoCommand // instanceof handles nulls
+                && targetIndex.equals(((DailyTodoCommand) other).targetIndex))
+                && operationFlag.equals(((DailyTodoCommand) other).operationFlag); // state check
     }
 }

@@ -39,7 +39,7 @@ public class ModelManager implements Model {
         this.taskTracker = new TaskTracker(taskTracker);
         this.userPrefs = new UserPrefs(userPrefs);
         filteredTasks = new FilteredList<>(this.taskTracker.getTaskList());
-        dailyTasks = new FilteredList<>(this.taskTracker.getDailyTaskList());
+        dailyTasks = new FilteredList<>(this.taskTracker.getDailyTodoTaskList());
         this.versionedTaskTracker = new VersionedTaskTracker();
     }
 
@@ -119,14 +119,14 @@ public class ModelManager implements Model {
     @Override
     public void addToDailyToDoList(Task taskToAdd) {
         // handle case where task already exists
-        taskTracker.addDailyTask(taskToAdd);
+        taskTracker.addDailyTodoTask(taskToAdd);
         updateDailyTaskList(PREDICATE_SHOW_ALL_TASKS);
     }
 
     @Override
     public void removeFromDailyToDoList(Task taskToRemove) {
         // handle case where task is not found
-        taskTracker.removeDailyTask(taskToRemove);
+        taskTracker.removeDailyTodoTask(taskToRemove);
     }
 
     @Override

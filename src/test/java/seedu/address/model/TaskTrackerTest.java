@@ -99,7 +99,7 @@ public class TaskTrackerTest {
         }
 
         @Override
-        public ObservableList<Task> getDailyTaskList() {
+        public ObservableList<Task> getDailyTodoTaskList() {
             return dailyTasks;
         }
     }
