@@ -91,7 +91,7 @@ public class LogicManager implements Logic {
     }
 
     @Override
-    public ObservableList<Task> getDailyTaskList() {
+    public ObservableList<Task> getDailyTodoTaskList() {
         return model.getDailyTodoTaskList();
     }
 
