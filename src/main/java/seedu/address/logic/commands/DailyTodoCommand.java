@@ -54,17 +54,17 @@ public class DailyTodoCommand extends Command {
             }
 
             Task taskToAdd = lastShownList.get(targetIndex.getZeroBased());
-            model.addToDailyToDoList(taskToAdd);
+            model.addToDailyTodoList(taskToAdd);
             return new CommandResult(String.format(MESSAGE_ADDED_TASK_SUCCESS, taskToAdd));
         } else {
-            List<Task> lastShownDailyTaskList = model.getDailyTaskList();
+            List<Task> lastShownDailyTaskList = model.getDailyTodoTaskList();
 
             if (targetIndex.getZeroBased() >= lastShownDailyTaskList.size()) {
                 throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
             }
 
             Task taskToRemove = lastShownDailyTaskList.get(targetIndex.getZeroBased());
-            model.removeFromDailyToDoList(taskToRemove);
+            model.removeFromDailyTodoList(taskToRemove);
             return new CommandResult(String.format(MESSAGE_REMOVED_TASK_SUCCESS, taskToRemove));
         }
     }

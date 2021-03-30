@@ -64,7 +64,7 @@ public class TaskTrackerParser {
             return new DeleteCommandParser().parse(arguments);
 
         case DailyTodoCommand.COMMAND_WORD:
-            return new DoTodayCommandParser().parse(arguments);
+            return new DailyTodoCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();

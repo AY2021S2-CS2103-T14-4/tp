@@ -23,7 +23,7 @@ public class ModelManager implements Model {
     private final TaskTracker taskTracker;
     private final UserPrefs userPrefs;
     private final FilteredList<Task> filteredTasks;
-    private final FilteredList<Task> dailyTasks;
+    private final FilteredList<Task> dailyTodoTasks;
     private VersionedTaskTracker versionedTaskTracker;
 
     /**
@@ -39,7 +39,7 @@ public class ModelManager implements Model {
         this.taskTracker = new TaskTracker(taskTracker);
         this.userPrefs = new UserPrefs(userPrefs);
         filteredTasks = new FilteredList<>(this.taskTracker.getTaskList());
-        dailyTasks = new FilteredList<>(this.taskTracker.getDailyTodoTaskList());
+        dailyTodoTasks = new FilteredList<>(this.taskTracker.getDailyTodoTaskList());
         this.versionedTaskTracker = new VersionedTaskTracker();
     }
 
@@ -117,14 +117,14 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void addToDailyToDoList(Task taskToAdd) {
+    public void addToDailyTodoList(Task taskToAdd) {
         // handle case where task already exists
         taskTracker.addDailyTodoTask(taskToAdd);
-        updateDailyTaskList(PREDICATE_SHOW_ALL_TASKS);
+        updateDailyTodoTaskList(PREDICATE_SHOW_ALL_TASKS);
     }
 
     @Override
-    public void removeFromDailyToDoList(Task taskToRemove) {
+    public void removeFromDailyTodoList(Task taskToRemove) {
         // handle case where task is not found
         taskTracker.removeDailyTodoTask(taskToRemove);
     }
@@ -186,8 +186,8 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public ObservableList<Task> getDailyTaskList() {
-        return dailyTasks;
+    public ObservableList<Task> getDailyTodoTaskList() {
+        return dailyTodoTasks;
     }
 
     @Override
@@ -197,9 +197,9 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void updateDailyTaskList(Predicate<Task> predicate) {
+    public void updateDailyTodoTaskList(Predicate<Task> predicate) {
         requireNonNull(predicate);
-        dailyTasks.setPredicate(predicate);
+        dailyTodoTasks.setPredicate(predicate);
     }
 
     @Override

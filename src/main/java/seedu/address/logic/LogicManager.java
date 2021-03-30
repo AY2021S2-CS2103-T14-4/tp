@@ -92,7 +92,7 @@ public class LogicManager implements Logic {
 
     @Override
     public ObservableList<Task> getDailyTaskList() {
-        return model.getDailyTaskList();
+        return model.getDailyTodoTaskList();
     }
 
     @Override

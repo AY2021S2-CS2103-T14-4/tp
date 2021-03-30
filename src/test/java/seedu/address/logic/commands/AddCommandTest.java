@@ -115,12 +115,12 @@ public class AddCommandTest {
         }
 
         @Override
-        public void addToDailyToDoList(Task task) {
+        public void addToDailyTodoList(Task task) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void removeFromDailyToDoList(Task task) {
+        public void removeFromDailyTodoList(Task task) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -171,7 +171,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public ObservableList<Task> getDailyTaskList() {
+        public ObservableList<Task> getDailyTodoTaskList() {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -181,7 +181,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public void updateDailyTaskList(Predicate<Task> predicate) {
+        public void updateDailyTodoTaskList(Predicate<Task> predicate) {
             throw new AssertionError("This method should not be called.");
         }
 

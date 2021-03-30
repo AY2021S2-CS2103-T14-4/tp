@@ -7,7 +7,7 @@ import seedu.address.logic.commands.DailyTodoCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.logic.util.OperationFlag;
 
-public class DoTodayCommandParser implements Parser<DailyTodoCommand> {
+public class DailyTodoCommandParser implements Parser<DailyTodoCommand> {
 
     /**
      * Parses the given {@code String} of arguments in the context of the DailyTodoCommand
