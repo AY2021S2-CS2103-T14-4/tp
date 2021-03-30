@@ -26,7 +26,7 @@ public class SortCommand extends Command {
 
     /**
      * Creates a SortCommand with the appropriate sorting flag and comparator.
-     * @param sortingFlag a valid sorting flag
+     * @param sortingFlag a valid sorting flag.
      * @throws IllegalStateException if the sorting flag provided is not valid.
      */
     public SortCommand(SortingFlag sortingFlag) {
